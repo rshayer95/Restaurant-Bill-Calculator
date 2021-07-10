@@ -1,0 +1,304 @@
+﻿<Window FontSize="16px" x:Class="RestaurantBillCalculator.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RestaurantBillCalculator"
+        mc:Ignorable="d"
+        Title="Menu" WindowState="Maximized">
+    <DockPanel>
+
+
+        <Grid DockPanel.Dock="Top" Margin="0 0 0 10" >
+            <TextBlock Text="MENU" HorizontalAlignment="Center" FontWeight="Bold"  FontSize="40" Foreground="#d72631" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <Label FontSize="20px" Content="Bill Total: "></Label>
+                <Label FontSize="20px" x:Name="TotalBill" Foreground="#d72631" Content="$0" ></Label>
+            </StackPanel>
+        </Grid>
+        <StackPanel HorizontalAlignment="Stretch" >
+        <Grid Margin="10 10 10 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+            <!-- BEVERAGES -->
+            <StackPanel x:Name="beverages" Margin="0 0 20px 0" Grid.Row="0" Orientation="Vertical"  HorizontalAlignment="Stretch" Grid.Column="0">
+                <TextBlock Text="BEVERAGES" FontSize="28px" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#d72631"></TextBlock>
+                <!-- Labels-->
+                <Grid  Margin="10 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <TextBlock Margin="15 0 0 0" Width="150px" VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#007b8a" Text="Item" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#007b8a" Text="Price" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+                <!-- Soda -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Soda" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" Content="Soda" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$1.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+                <!-- Tea -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Tea" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" Content="Tea" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$1.50" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+                <!-- Coffee -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Coffee" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" Content="Coffee" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$1.25" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Mineral Water -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Mineral_Water" Content="Mineral Water" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$2.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Juice -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Juice" Content="Juice" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$2.50" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Milk -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Milk" Content="Milk" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$1.50" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+            </StackPanel>
+            <!-- APPETIZER -->
+            <StackPanel x:Name="appetizers" Margin="0 0 20px 0" Grid.Row="0" Orientation="Vertical"  HorizontalAlignment="Stretch" Grid.Column="1">
+                <TextBlock Text="APPETIZERS" FontSize="28px" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#d72631"></TextBlock>
+                
+                <!-- Labels-->
+                <Grid  Margin="10 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <TextBlock Margin="15 0 0 0" Width="150px" VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#007b8a" Text="Item" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#007b8a" Text="Price" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+                
+                <!-- Buffalo Wings -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Buffalo_Wings" Content="Buffalo Wings" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$5.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+                
+                <!-- Buffalo Fingers -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Buffalo_Fingers" Content="Buffalo Fingers" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$6.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Potato Skins -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Potato_Skins" Content="Potato Skins" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$8.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Nachos -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Nachos" Content="Nachos" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$8.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Mushroom Caps -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Mushroom_Caps" Content="Mushroom Caps" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$10.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Shrimp Cocktail -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Shrimp_Cocktail" Content="Shrimp Cocktail" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$12.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Chips And Salsa -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Chips_And_Salsa" Content="Chips And Salsa" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$6.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+            </StackPanel>
+
+            <!-- Main Course -->
+            <StackPanel x:Name="mainCourse" Margin="0 0 20px 0" Grid.Row="0" Orientation="Vertical"  HorizontalAlignment="Stretch" Grid.Column="2">
+                <TextBlock Text="MAIN COURSE" FontSize="28px" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#d72631"></TextBlock>
+
+                <!-- Labels-->
+                <Grid  Margin="10 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <TextBlock Margin="15 0 0 0" Width="150px" VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#007b8a" Text="Item" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#007b8a" Text="Price" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Chicken Alfredo -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Chicken_Alfredo" Content="Chicken Alfredo" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$13.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Chicken Picatta -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Chicken_Picatta" Content="Chicken Picatta" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$13.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Turkey Club -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Turkey_Club" Content="Turkey Club" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$11.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Lobster Pie -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Lobster_Pie" Content="Lobster Pie" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$19.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Prime Rib -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Prime_Rib" Content="Prime Rib" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$20.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Shrimp Scampi -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Shrimp_Scampi" Content="Shrimp Scampi" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$18.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Turkey Dinner -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Turkey_Dinner" Content="Turkey Dinner" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$13.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Stuffed Chicken -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Stuffed_Chicken" Content="Stuffed Chicken" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$14.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+                <!-- Seafood Alfredo -->
+                <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <CheckBox x:Name="Seafood_Alfredo" Content="Seafood Alfredo" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$15.95" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+
+            </StackPanel>
+            <!-- DESSERTS -->
+                <StackPanel x:Name="desserts" Margin="0 0 20px 0" Grid.Row="0" Orientation="Vertical"  HorizontalAlignment="Stretch" Grid.Column="3">
+                    <TextBlock Text="DESSERT" FontSize="28px" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#d72631"></TextBlock>
+                    <!-- Labels-->
+                    <Grid  Margin="10 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <TextBlock Margin="15 0 0 0" Width="150px" VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#007b8a" Text="Item" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#007b8a" Text="Price" HorizontalAlignment="Right"></TextBlock>
+                    </Grid>
+                    <!-- Apple Pie -->
+                    <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <CheckBox x:Name="Apple_Pie" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" Content="Apple Pie" VerticalAlignment="Center"></CheckBox>
+                        <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$5.95" HorizontalAlignment="Right"></TextBlock>
+                    </Grid>
+                    <!-- Sundae -->
+                    <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <CheckBox x:Name="Sundae" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" Content="Sundae" VerticalAlignment="Center"></CheckBox>
+                        <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$3.95" HorizontalAlignment="Right"></TextBlock>
+                    </Grid>
+                    <!-- Carrot Cake -->
+                    <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <CheckBox x:Name="Carrot_Cake" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" Content="Carrot Cake" VerticalAlignment="Center"></CheckBox>
+                        <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$5.95" HorizontalAlignment="Right"></TextBlock>
+                    </Grid>
+
+                    <!-- Mud Pie -->
+                    <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <CheckBox x:Name="Mud_Pie" Content="Mud Pie" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                        <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$4.95" HorizontalAlignment="Right"></TextBlock>
+                    </Grid>
+
+                    <!-- Apple Crips -->
+                    <Grid  Margin=" 20 10 10 0" Height="20px" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <CheckBox x:Name="Apple_Crips" Content="Apple Crips" Checked="checkbox_Checked" Unchecked="checkbox_Unchecked" FontSize="13px" Margin="0 0 20 0" VerticalAlignment="Center"></CheckBox>
+                        <TextBlock VerticalAlignment="Center" FontSize="13px" FontWeight="Bold" Foreground="#d72631" Text="$2.50" HorizontalAlignment="Right"></TextBlock>
+                    </Grid>
+
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="150px" Orientation="Horizontal">
+                    <!-- View Order and Bill Button -->
+                    <Button Cursor="Hand" FontFamily="Helvetica" FontSize="20" Name="viewOrders" Margin=" 5px 10px 5px 0" Height="60px" Width="200px" BorderBrush="Transparent" Content="View Order and Bill" Foreground="White" Click="viewOrders_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value=" #d72631"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#c1222c"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <!-- Clear Button -->
+                    <Button Click="clear_Click" Cursor="Hand" FontFamily="Helvetica" FontSize="20" Name="clear" Margin=" 5px 10px 5px 0" Height="60px" Width=" 100px" BorderBrush="Transparent" Content="Clear" Foreground="#333">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value=" #e6e6e6"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#d1d1d1"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <!-- Exit Button -->
+                    <Button Cursor="Hand" FontFamily="Helvetica" FontSize="20" Name="exit" Margin=" 5px 10px 5px 0" Height="60px" Width=" 100px" BorderBrush="Transparent" Content="Exit" Foreground="White" Click="exit_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value=" #007b8a"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#006471"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        
+    </DockPanel>
+</Window>
